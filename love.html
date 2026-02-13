@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Zai Hassan 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+    margin:0;
+    font-family:Segoe UI;
+    background:radial-gradient(circle,#ff9a9e,#fad0c4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+.card{
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    max-width:420px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+.photos img{
+    width:48%;
+    border-radius:15px;
+}
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    font-size:1em;
+    cursor:pointer;
+}
+#yes{background:#ff4d6d;color:white;}
+#no{position:absolute;background:#ddd;}
+.firework{position:fixed;font-size:30px;animation:boom 1s;}
+@keyframes boom{to{transform:scale(3);opacity:0}}
+</style>
+</head>
+<body>
+
+<div class="card" id="card">
+<h1>Zai Hassan 💕</h1>
+<p id="type"></p>
+
+<div class="photos">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+</div>
+
+<h3>Will you be my Valentine? 💘</h3>
+<button id="yes" onclick="yes()">YES 💖</button>
+<button id="no">NO 🙈</button>
+</div>
+
+<audio autoplay loop>
+<source src="ordinary.mp3">
+</audio>
+
+<script>
+const msg="You changed my life in the most beautiful way. I don’t want ordinary… I want YOU.";
+let i=0;
+function type(){
+ if(i<msg.length){
+ document.getElementById("type").innerHTML+=msg[i++];
+ setTimeout(type,40);
+ }}
+type();
+
+document.getElementById("no").onmouseover=()=>{
+ no.style.left=Math.random()*80+"vw";
+ no.style.top=Math.random()*80+"vh";
+};
+
+function yes(){
+ for(let i=0;i<25;i++){
+  let f=document.createElement("div");
+  f.className="firework";
+  f.innerHTML="🎆";
+  f.style.left=Math.random()*100+"vw";
+  f.style.top=Math.random()*100+"vh";
+  document.body.appendChild(f);
+ }
+ setTimeout(()=>window.location="memories.html",2000);
+}
+</script>
+
+</body>
+</html>

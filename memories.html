@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Memories 💞</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:Segoe UI, sans-serif;
+    background:linear-gradient(135deg,#ffe1e8,#ffd6e0);
+    text-align:center;
+}
+
+h1{
+    color:#ff4d6d;
+    padding:18px 10px 5px;
+    font-size:1.6em;
+}
+
+.subtitle{
+    color:#555;
+    font-size:0.95em;
+    margin-bottom:15px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));
+    gap:14px;
+    padding:15px;
+}
+
+.memory{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 8px 18px rgba(0,0,0,0.18);
+    transition:transform .25s ease;
+}
+
+.memory:hover{
+    transform:scale(1.03);
+}
+
+.memory img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    display:block;
+}
+
+.caption{
+    padding:10px 8px;
+    font-size:0.85em;
+    color:#444;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Our Little Forever 💕</h1>
+<p class="subtitle">Moments, memories, and a lot of love ❤️</p>
+
+<div class="gallery">
+
+<div class="memory"><img src="memory1.jpg"><div class="caption">A moment I’ll always smile about 💖</div></div>
+<div class="memory"><img src="memory2.jpg"><div class="caption">Love looks like this ✨</div></div>
+<div class="memory"><img src="memory3.jpg"><div class="caption">One memory, endless feelings 💞</div></div>
+<div class="memory"><img src="memory4.jpg"><div class="caption">Still feels like magic 💫</div></div>
+<div class="memory"><img src="memory5.jpg"><div class="caption">Forever grateful for this moment ❤️</div></div>
+<div class="memory"><img src="memory6.jpg"><div class="caption">This one means a lot to me 💕</div></div>
+<div class="memory"><img src="memory7.jpg"><div class="caption">A quiet kind of happiness 😌</div></div>
+<div class="memory"><img src="memory8.jpg"><div class="caption">Love, without trying 💘</div></div>
+<div class="memory"><img src="memory9.jpg"><div class="caption">One of my favorite memories 💓</div></div>
+<div class="memory"><img src="memory10.jpg"><div class="caption">Moments like these matter ❤️</div></div>
+<div class="memory"><img src="memory11.jpg"><div class="caption">Simple. Real. Ours. 💖</div></div>
+<div class="memory"><img src="memory12.jpg"><div class="caption">Happiness captured 📸</div></div>
+<div class="memory"><img src="memory13.jpg"><div class="caption">Still makes my heart warm 💞</div></div>
+<div class="memory"><img src="memory14.jpg"><div class="caption">Love lives here 💕</div></div>
+<div class="memory"><img src="memory15.jpg"><div class="caption">One look says everything 😍</div></div>
+<div class="memory"><img src="memory16.jpg"><div class="caption">A moment worth keeping ❤️</div></div>
+<div class="memory"><img src="memory17.jpg"><div class="caption">This feeling never gets old 💘</div></div>
+<div class="memory"><img src="memory18.jpg"><div class="caption">Something special, always 💖</div></div>
+<div class="memory"><img src="memory19.jpg"><div class="caption">Just a beautiful memory 💫</div></div>
+<div class="memory"><img src="memory20.jpg"><div class="caption">Love, in its simplest form 💞</div></div>
+<div class="memory"><img src="memory21.jpg"><div class="caption">Still one of my favorites ❤️</div></div>
+<div class="memory"><img src="memory22.jpg"><div class="caption">Pure happiness, honestly 💕</div></div>
+<div class="memory"><img src="memory23.jpg"><div class="caption">Moments I hold close 💓</div></div>
+<div class="memory"><img src="memory24.jpg"><div class="caption">A small moment, big meaning 💘</div></div>
+<div class="memory"><img src="memory25.jpg"><div class="caption">Love lives in memories like this ❤️</div></div>
+<div class="memory"><img src="memory26.jpg"><div class="caption">One memory, one smile 😊</div></div>
+<div class="memory"><img src="memory27.jpg"><div class="caption">This one stays with me 💕</div></div>
+<div class="memory"><img src="memory28.jpg"><div class="caption">And there’s so much more to come 💍</div></div>
+
+</div>
+
+<!-- 🎶 CONTINUOUS MUSIC -->
+<audio id="bgm" loop>
+  <source src="ordinary.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const audio = document.getElementById("bgm");
+
+if(localStorage.getItem("playMusic")==="yes"){
+    const savedTime = localStorage.getItem("musicTime");
+    if(savedTime){
+        audio.currentTime = savedTime;
+    }
+    audio.play().catch(()=>{});
+}
+
+window.addEventListener("beforeunload", ()=>{
+    localStorage.setItem("musicTime", audio.currentTime);
+});
+</script>
+
+</body>
+</html>
